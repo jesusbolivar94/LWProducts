@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware(['auth:sanctum'])->group(function() {
+    Route::get('/user', fn (Request $request) => $request->user());
+
+    Route::controller(\App\Http\Controllers\Products\ProductController::class)->group(function() {
+        Route::post('/seed', 'seed');
+    });
 });
