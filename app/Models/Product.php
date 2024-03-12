@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Architecture extends Model
+class Product extends Model
 {
     protected $fillable = [
         'name',
-        'version'
+        'location_id',
+        'currency_id',
+        'price',
     ];
 }

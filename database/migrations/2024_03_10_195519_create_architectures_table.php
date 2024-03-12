@@ -10,6 +10,7 @@ return new class extends Migration {
         Schema::create('architectures', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('version');
             $table->timestamps();
         });
     }
